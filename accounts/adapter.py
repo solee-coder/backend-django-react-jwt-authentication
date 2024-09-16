@@ -1,5 +1,6 @@
-from allauth.account.adapter import DefaultAccountAdapter
+# Custom Adapter for allauth
 
+from allauth.account.adapter import DefaultAccountAdapter
 
 class CustomAccountAdapter(DefaultAccountAdapter):
 

@@ -83,7 +83,6 @@ class CustomRegisterSerializer(serializers.Serializer):
                 raise serializers.ValidationError(
                     detail=serializers.as_serializer_error(exc)
             )
-        # user.introduction = self.cleaned_data.get('introduction')
         user.save()
         self.custom_signup(request, user)
         setup_user_email(request, user, [])

@@ -7,18 +7,22 @@ from rest_framework.response import Response
 from rest_framework import status
 
 
-from allauth.socialaccount.providers.google.views import GoogleOAuth2Adapter
-from allauth.socialaccount.providers.oauth2.client import OAuth2Client
+# from allauth.socialaccount.providers.google.views import GoogleOAuth2Adapter
+# from allauth.socialaccount.providers.oauth2.client import OAuth2Client
 from allauth.account.models import EmailAddress
-from dj_rest_auth.registration.views import SocialLoginView
+# from dj_rest_auth.registration.views import SocialLoginView
 from dj_rest_auth.registration.serializers import (ResendEmailVerificationSerializer)
 
+
+# Redirection URLs to the front-end
 
 def verify_email(request, key):
     return redirect(f"http://localhost:3000/registration/verify-email/{key}")
 
 def password_reset_confirm(request, uid, token):
     return redirect(f"http://localhost:3000/password/reset/confirm/{uid}/{token}")
+
+# Customised ResendEmail view
 
 class ResendEmailVerificationView(CreateAPIView):
     permission_classes = (AllowAny,)

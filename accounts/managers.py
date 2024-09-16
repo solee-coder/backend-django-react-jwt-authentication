@@ -3,6 +3,8 @@ from django.core.validators import validate_email
 from django.core.exceptions import ValidationError
 from django.utils.translation import gettext_lazy as _
 
+# custom user manager
+
 class CustomUserManager(BaseUserManager):
     def email_validation(self, email):
         try:
@@ -12,12 +14,12 @@ class CustomUserManager(BaseUserManager):
     
     def create_user(self, email, first_name, last_name=None, password=None, **extra_fields):
         if not email:
-            raise ValueError(_("This is required field"))
+            raise ValueError(_("This is a required field"))
         else:
             self.email_validation(email)
             clean_email = self.normalize_email(email)
         if not first_name:
-            raise ValueError(_("This is required field"))
+            raise ValueError(_("This is a required field"))
         
         user = self.model(
             email = clean_email,

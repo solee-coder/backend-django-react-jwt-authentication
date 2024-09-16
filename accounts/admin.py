@@ -4,7 +4,7 @@ from django.contrib.auth.admin import UserAdmin
 from django.utils.translation import gettext_lazy as _
 from .models import CustomUserModel
 
-# Register your models here.
+# Custom user admin
 
 class UserAdminCustom(UserAdmin):
     fieldsets = (

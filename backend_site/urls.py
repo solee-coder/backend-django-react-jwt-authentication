@@ -24,7 +24,6 @@ from dj_rest_auth.registration.views import  VerifyEmailView  # config
 
 # from dj_rest_auth.views import PasswordResetConfirmView # config
 
-
 urlpatterns = [
     path("admin/", admin.site.urls),
 

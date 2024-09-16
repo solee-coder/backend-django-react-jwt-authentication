@@ -19,8 +19,6 @@ env = environ.Env(DEBUG=(bool, False)) # config
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-print ("BASE_DIR CONFIG", BASE_DIR) # config
-
 environ.Env.read_env(BASE_DIR/".env") # config
 
 # Quick-start development settings - unsuitable for production
@@ -34,8 +32,7 @@ SECRET_KEY = env("SECRET_KEY") # config
 # DEBUG = False
 DEBUG = env("DEBUG") # config
 
-ALLOWED_HOSTS = []
-
+ALLOWED_HOSTS = [] # config
 
 # Application definition
 
@@ -88,23 +85,13 @@ MIDDLEWARE = [
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
 
-#config allauth
- 
-# AUTHENTICATION_BACKENDS = [
-#     # Needed to login by username in Django admin, regardless of `allauth`
-#     'django.contrib.auth.backends.ModelBackend',
-
-#     # `allauth` specific authentication methods, such as login by email
-#     'allauth.account.auth_backends.AuthenticationBackend',
-# ]
-
 
 ROOT_URLCONF = "backend_site.urls"
 
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [BASE_DIR/'accounts'/'templates'],
+        "DIRS": [BASE_DIR/'accounts'/'templates'], # config
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
@@ -207,33 +194,23 @@ REST_AUTH = {
     'USER_DETAILS_SERIALIZER': 'accounts.serializers.CustomUserDetailsSerializer',
 }
 
-# REST_AUTH_REGISTER_SERIALIZERS = {
-#         'REGISTER_SERIALIZER': "accounts.serializers.CustomRegisterSerializer",
-# }
-
 # cors headers # config
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
 ]
+
 CORS_ALLOW_CREDENTIALS = True
 
-# <EMAIL_CONFIRM_REDIRECT_BASE_URL>/<key>
-# EMAIL_CONFIRM_REDIRECT_BASE_URL = \
-#     "http://localhost:3000/email/confirm/"
-
-# <PASSWORD_RESET_CONFIRM_REDIRECT_BASE_URL>/<uidb64>/<token>/
-# PASSWORD_RESET_CONFIRM_REDIRECT_BASE_URL = \
-#     "http://localhost:3000/password-reset/confirm/"
-
-
 # send email # config
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-# EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend" # for testing
+# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend' # for sending emails
+EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend" # for testing
 EMAIL_HOST = env("EMAIL_HOST")
 EMAIL_USE_TLS = True
 EMAIL_PORT = 587
 DEFAULT_FROM_EMAIL = env("EMAIL_HOST_USER")
 EMAIL_HOST_USER = env("EMAIL_HOST_USER")
 EMAIL_HOST_PASSWORD = env("EMAIL_HOST_PASSWORD")
+
+# custom user model # config
 
 AUTH_USER_MODEL = "accounts.CustomUserModel"
