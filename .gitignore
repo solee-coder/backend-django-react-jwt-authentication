@@ -29,7 +29,6 @@ media/
 # migrations
 /migrations
 /.migrations
-/accounts/migrations/
 
 # testing
 /coverage
