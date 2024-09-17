@@ -6,7 +6,7 @@
 
 ### Django Installation
 
-This is the companion Github repository to the YouTube video demonstrating the installation and  testing of the API endpoints.
+This is the companion Github repository to the YouTube video (https://youtu.be/WI-ticOpfkk) demonstrating the installation and  testing of the API endpoints.
 
 This repository constitutes the backend code using Python, Django and Django Rest Framework and relies on the dj-rest-auth package, which in turn relies on the django-allauth package.  It currently uses SQLite as the database, please change this according to your needs in the settings.py file. It utilises a Django custom user model, and uses email, rather than user name, as the mandatory registration and log in field. Transactional emails for registration and password management is used, so please ensure you have a suitable email provider that permits such emails. For demonstration purposes, the YouTube video uses the console email backend.
 
