@@ -33,7 +33,7 @@ simpleJWT: https://django-rest-framework-simplejwt.readthedocs.io/en/latest/ind
 
 #4 Once installed, activate the virtual environment with `pipenv shell`
 
-#5 Examine models.py in the accounts app folder.  Several custom user model fields have been created. Adding, removing and changing these fields will impact the rest of the configuration that you will have to customise, e.g. serializer.py, views.py, admin.py. Please remember to customise the user model before developing other models to avoid complications during database migrations ([https://docs.djangoproject.com/en/5.1/topics/auth/customizing/#changing-to-a-custom-user-model-mid-project](https://docs.djangoproject.com/en/4.2/topics/auth/customizing/#changing-to-a-custom-user-model-mid-project). 
+#5 Examine models.py in the accounts app folder.  Several custom user model fields have been created. Adding, removing and changing these fields will impact the rest of the configuration that you will have to customise, e.g. serializer.py, views.py, admin.py. Please remember to customise the user model before developing other models to avoid complications during database migrations (https://docs.djangoproject.com/en/4.2/topics/auth/customizing/#changing-to-a-custom-user-model-mid-project). 
 
 #6 Run `python manage.py makemigrations`
 
